@@ -1,0 +1,12 @@
+[Unit]
+Description=SuperCollider
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/supercollider
+ExecStart=/usr/local/bin/sclang air.scd
+
+[Install]
+WantedBy=multi-user.target

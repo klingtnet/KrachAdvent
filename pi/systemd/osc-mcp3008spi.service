@@ -1,0 +1,11 @@
+[Unit]
+Description=SuperCollider
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/mcp3008spi/target/release/mcp3008spi
+
+[Install]
+WantedBy=multi-user.target
