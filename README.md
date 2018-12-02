@@ -1,4 +1,4 @@
-# KrachAdvent (work-in-progress)
+# KrachAdvent
 
 ![Exhibition at Bach Advent 2018](./bach-advent-2018.jpg)¹
 
