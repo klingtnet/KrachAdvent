@@ -1,7 +1,7 @@
 (
 s.waitForBoot
 {
-	~b1 = Buffer.readChannel(s, "johann_sebastian_bach_air_trimmed.ogg", channels:[0]);
+	~b1 = Buffer.readChannel(s, "Cthulhu-trifft-Bach-im-Advent-(Chorale-125).ogg", channels:[0]);
 
 	(
 	SynthDef.new(\stretcher, {
