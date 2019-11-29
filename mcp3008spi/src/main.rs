@@ -40,7 +40,7 @@ fn main() {
         if (val - last_pots[idx]).abs() > epsilon {
             let msg_buf = encoder::encode(&OscPacket::Message(OscMessage {
                 addr: addrs[idx].into(),
-                args: Some(vec![OscType::Float(val)]),
+                args: vec![OscType::Float(val)],
             })).expect("failed to build OSC packet");
             sock.send_to(&msg_buf, "127.0.0.1:55556")
                 .expect("failed to send UDP packet");
