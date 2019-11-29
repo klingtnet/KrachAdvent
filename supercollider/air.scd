@@ -25,6 +25,15 @@ s.waitForBoot
 	s.sync;
 
 	(
+		w = Window("Fullscreen Analyzer", Rect(0, 0, 1920, 1080));
+		f = FreqScopeView(w, w.view.bounds);
+		f.active_(true);
+		w.onClose_({ f.kill });
+		w.front;
+		w.fullScreen;
+	);
+
+	(
 	OSCdef.new(\pitchRatio, {|msg, time, addr, recvPort| y.set(\pitchRatio, msg[1].linlin(0,1,-36,36).midiratio)}, "/pitch/ratio", NetAddr.new("127.0.0.1", 55555), 55556);
 	OSCdef.new(\randomnessAmount, {|msg, time, addr, recvPort| y.set(\randAmt, msg[1].linlin(0,1,0,0.25))}, "/randomness/amount", NetAddr.new("127.0.0.1", 55555), 55556);
 	OSCdef.new(\grainRate, {|msg, time, addr, recvPort| y.set(\grainRate, msg[1].linexp(0,1,1,500))}, "/grain/rate", NetAddr.new("127.0.0.1", 55555), 55556);
